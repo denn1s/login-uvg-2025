@@ -1,12 +1,78 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <h1>Hello World</h1>
-</body>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.css">
+    <style>
+    #register-page, #loggedin-page {
+      display: none;
+    }
+
+    main {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    .center {
+      text-align: center;
+      margin-top: 40px;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <article id="login-page">
+        <h1>Login</h1>
+        <form id="login-form">
+          <label for="login-username">Username:</label>
+          <input type="text" id="login-username" />
+          <label for="login-password">Password:</label>
+          <input type="password" id="login-password" />
+          <br />
+          <button type="submit">Login</button>
+          <div class="center">
+            <a onclick="navigation.navigate('register')">
+              Don't have an account? Register here
+            </a>
+          </div>
+        </form>
+      </article>
+      <article id="register-page">
+        <h1>Register</h1>
+        <form id="register-form">
+          <label for="register-username">Username:</label>
+          <input type="text" id="register-username" />
+          <label for="register-password">Password:</label>
+          <input type="password" id="register-password" />
+          <br />
+          <button type="submit">Register</button>
+          <div class="center">
+            <a onclick="navigation.navigate('login')">
+              Already have an account? Login here
+            </a>
+          </div>
+        </form>
+      </article>
+      <article id="loggedin-page">
+        <h1>You are logged in as <span id="username-display"></span></h1>
+          <div class="center">
+            <a onclick="navigation.navigate('login')">logout</a>
+          </div>
+      </article>
+    </main>
+    <script type="module" src="js/main.js"></script>
+
+
+
+    <form method="get" action="/heeeeeeelooooo">
+      <input type="text" value="dennis" name="myname" />
+      <button type="submit">SUBMIT</button>
+    </form>
+  </body>
 </html>
