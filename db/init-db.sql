@@ -1,0 +1,14 @@
+CREATE DATABASE IF NOT EXISTS simple_login;
+USE simple_login;
+
+CREATE TABLE IF NOT EXISTS users (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  username VARCHAR(50) NOT NULL UNIQUE,
+  password_hash VARCHAR(100) NOT NULL,
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE USER IF NOT EXISTS 'app_user'@'%' IDENTIFIED BY 'app_password';
+GRANT ALL PRIVILEGES ON simple_login.* TO 'app_user'@'%';
+FLUSH PRIVILEGES;
+
